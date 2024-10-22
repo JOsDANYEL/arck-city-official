@@ -194,11 +194,12 @@ h1 {
     margin-top: 4rem;
 }
 
-.contact-section h2 {
+.contact-section > h2 {
     text-align: center;
     color: var(--color-primary);
     font-size: 2rem;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .contact-container {
