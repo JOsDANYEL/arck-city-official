@@ -19,6 +19,10 @@ body {
     line-height: 1.6;
 }
 
+.main-container{
+color: #4a6741;
+}
+
 /* Añade estos estilos al inicio de tu archivo styles.css */
 
 .navbar {
