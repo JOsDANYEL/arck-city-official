@@ -113,6 +113,8 @@ h1 {
 .projects-section {
     padding: 5rem 0;
     scroll-margin-top: 2rem;
+    width: 100%;
+background: none;
 }
 
 .projects-section h2 {
@@ -127,6 +129,8 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
