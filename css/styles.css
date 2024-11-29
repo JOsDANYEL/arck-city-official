@@ -1,15 +1,41 @@
 :root {
-    --color-primary: #4a6741; /* Verde orgánico */
-    --color-secondary: #dcd3c9; /* Beige claro */
-    --color-accent: #8b7355; /* Café claro */
-    --color-background: #c9a771; /* Beige muy claro para el fondo */
-    --color-text: #2c3e2d; /* Verde oscuro para texto */
+    /* Paleta de colores */
+    --color-primary: #4a6741;
+    --color-secondary: #dcd3c9;
+    --color-accent: #8b7355;
+    --color-background: #c9a771;
+    --color-text: #2c3e2d;
+
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+
+    /* Bordes */
+    --border-radius-sm: 8px;
+    --border-radius-md: 15px;
+    --border-radius-lg: 30px;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+    /* Transiciones */
+    --transition-default: all 0.3s ease;
 }
 
-* {
+/* Reset y estilos base */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,26 +45,28 @@ body {
     line-height: 1.6;
 }
 
-.main-container{
-color: #4a6741;
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
 }
 
-/* Añade estos estilos al inicio de tu archivo styles.css */
-
+/* Navegación */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     z-index: 1000;
 }
 
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,16 +81,16 @@ color: #4a6741;
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-md);
 }
 
 .nav-link {
     color: var(--color-text);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition-default);
 }
 
 .nav-link:hover {
@@ -70,339 +98,102 @@ color: #4a6741;
     color: var(--color-primary);
 }
 
-/* Modificar la clase container existente para dar espacio a la navbar */
-.main-content {
-    padding-top: 5rem; /* Ajusta este valor según la altura de tu navbar */
-}
-
-/* Agregar media query para dispositivos móviles */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .nav-menu {
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        text-align: center;
-        padding-top: 1rem;
-    }
-
-    .nav-link {
-        display: block;
-        padding: 0.5rem;
-    }
-
-    .main-content {
-        padding-top: 8rem; /* Ajusta este valor para móviles */
-    }
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.logo-container {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.logo {
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-text {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.tagline {
-    font-size: 1.2rem;
-    color: var(--color-text);
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 300;
-}
-
-.buttons-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
+/* Componentes */
 .btn {
-    padding: 1rem 2rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: 1.1rem;
     background-color: var(--color-primary);
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: var(--border-radius-lg);
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
+    transition: var(--transition-default);
     font-weight: 500;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .btn:hover {
     background-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    .buttons-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-/* Añade estos estilos al final de tu archivo styles.css */
-
+/* Secciones */
 .projects-section {
-    padding: 5rem 0;
-    scroll-margin-top: 2rem;
-    width: 100%;
-background: none;
-}
-
-.projects-section h2 {
-    text-align: center;
-    color: var(--color-primary);
-    font-size: 2rem;
-    margin-bottom: 3rem;
+    padding: var(--spacing-xl) 0;
+    scroll-margin-top: var(--spacing-md);
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 0 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-sm);
 }
 
 .project-card {
     background: white;
-    border-radius: 15px;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-default);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
 }
 
-.project-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-info {
-    padding: 1.5rem;
-}
-
-.project-info h3 {
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.project-info p {
-    color: var(--color-text);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.project-year, .project-status {
-    display: inline-block;
-    padding: 0.3rem 1rem;
-    background-color: var(--color-secondary);
-    color: var(--color-text);
-    border-radius: 20px;
-    font-size: 0.8rem;
-}
-
-.project-status {
-    background-color: var(--color-accent);
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .projects-section {
-        padding: 3rem 0;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* Añade estos estilos al final de tu archivo styles.css */
-
+/* Formulario de contacto */
 .contact-section {
-    padding: 5rem 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--color-secondary);
-    margin-top: 4rem;
-}
-
-.contact-section > h2 {
-    text-align: center;
-    color: var(--color-primary);
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    width: 100%;
+    margin-top: var(--spacing-xl);
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: var(--spacing-xl);
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--spacing-md);
 }
 
-.contact-info h3 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.contact-details {
-    margin-top: 2rem;
-}
-
-.contact-details p {
-    margin-bottom: 0.5rem;
-}
-
-.contact-form {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--color-secondary);
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
+/* Footer */
 .footer {
     background-color: var(--color-primary);
     color: white;
-    padding: 4rem 0 0;
+    padding: var(--spacing-xl) 0 0;
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
-.footer-section h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.footer-section a:hover {
-    opacity: 0.8;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .nav-container {
+        flex-direction: column;
+        padding: var(--spacing-sm);
     }
 
-    .footer-content {
-        grid-template-columns: 1fr;
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
         text-align: center;
     }
 
-    .social-links {
-        justify-content: center;
+    .contact-container,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
